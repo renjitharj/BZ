@@ -7,8 +7,15 @@ const bookSchema = new mongoose.Schema({
     title:{ type:String, default:"----",required:true },
     isbn:{ type:Number, required:true, unique:true},
     author:{type:String, default:"----" },
-    orginalprice:{type:String, required:true},
-    sellingprice:{type:String, required:true}
+    bookimageurl:{type:String},
+    orginalprice:{type:Number, required:true},
+    sellingprice:{type:Number, required:true},
+    status: {
+        type: String,
+        enum: ['APPROVED', 'UNAPPROVED', 'SOLD'],
+        required: true,
+        default: 'UNAPPROVED'
+      },
 
 });
 
