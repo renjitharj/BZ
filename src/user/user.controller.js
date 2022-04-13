@@ -52,7 +52,8 @@ exports.getUsers = async (req, res) => {
       console.log(error)
       return res.send(500).json({
         error: true,
-        message: error.message,
+        mge: error.message,
+        
       });
     }
   };
