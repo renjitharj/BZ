@@ -39,7 +39,6 @@ if (userObj==null){
 exports.getUsers = async (req, res) => {
     try {
       const { id, role } = req.decoded;
-      
       if (req.query.type == null) {
         let User = await user.find()
         return res.send({ success: true, data: User });
