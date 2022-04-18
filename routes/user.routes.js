@@ -8,6 +8,7 @@ const router = express.Router();
 router.post('/registration',userController.userRegister)
 
 router.post('/login', userController.userLogin)
+router.get('/getusers', validatetoken.validateToken, userController.getUsers);
 router.post('/books',validatetoken.validateToken,bookController.createBook)
 
 // router.post('/chat', validatetoken.validateToken, chatController.sendMessage)
