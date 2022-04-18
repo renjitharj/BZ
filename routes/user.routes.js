@@ -10,4 +10,6 @@ router.post('/registration',userController.userRegister)
 router.post('/login', userController.userLogin)
 router.post('/books',validatetoken.validateToken,bookController.createBook)
 
+// router.post('/chat', validatetoken.validateToken, chatController.sendMessage)
+
 module.exports = router;

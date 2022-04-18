@@ -1,4 +1,4 @@
-// const router = require('express').Router();
+const router = require('express').Router();
 const bookModel = require('./book.model');
 const jwt = require("../helpers/tokengeneration")
 
@@ -27,4 +27,19 @@ const jwt = require("../helpers/tokengeneration")
    //const title= req.body.title;
    
 };
-
+/*exports.updateStatus = async (req, res) => {
+  
+  var Book = await bookModel.findByIdAndUpdate(req.body._id, req.body)
+ // Project = await projectModel.findById(req.body._id)
+  return res.status(200).json({
+    created: Book,
+    message: "Success"
+  });
+} catch (e) {
+  console.log(e)
+  return res.status(404).json({
+    status: false,
+    message: "Something went wrong",
+  });
+}
+};*/

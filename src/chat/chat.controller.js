@@ -1,18 +1,18 @@
 var message=require('../chat/model.messages');
 // Get message By ID
-module.exports. getMessageByUserId = (id ,callback) =>        {
+exports. getMessageByUserId = (id ,callback) =>        {
   message.find ({senderId: id}, callback)
-  .populate({path: 'senderId', select: [ 'name', 'profile picture']});
+  .populate({path: 'senderId', select: [ 'firstname', 'username']});
 }
 
 // Get message By convercation Id
-module.exports.getMessageByCoversationId =(id, callback) =>{
+exports.getMessageByCoversationId =(id, callback) =>{
     message.find({ConversationId:id},callback) .sort({dateTime: 1})
-    .populate({path:'senderId' , select:['name','profile_picture']});
+    .populate({path:'senderId' , select:['firstname','username']});
     //.populate('senderId')
 
 // Send message
-module.exports.sendMessage = async (messageForm, callback) => { 
-  message.create(messageForm, callback) ;
+exports.sendMessage = async (messageForm, callback) => { 
+ messageObj= await message.create(messageForm, callback) ;
 }
 }
