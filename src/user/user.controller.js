@@ -11,7 +11,8 @@ exports.userLogin = async (req, res) => {
 
     const userObj = await user.findOne({
 
-        username: req.body.username
+        username: req.body.username,
+        role:req.body.role
 
     })
 if (userObj==null){
@@ -20,7 +21,7 @@ if (userObj==null){
     var matched = await userObj.comparePassword(req.body.password,async(err,match)=>
     {
         if (match){
-            var gnjwt = await jwt.generateJwt(userObj._id,userObj._id,userObj._id)
+            var gnjwt = await jwt.generateJwt(userObj._id,userObj._id,userObj.role)
             if (gnjwt.err){
                return res.send("Token generation failed")
             

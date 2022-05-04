@@ -1,9 +1,9 @@
 const mongoose = require('mongoose')
-const { schema } = require('../user/user.model')
+//const { schema } = require('../user/user.model')
 const Schema = mongoose.Schema
 bcrypt = require('bcrypt')
 // conversation schema
-const conversationSchema = new schema({
+const conversationSchema = new Schema({
     firstUserId: {
         type: mongoose.Schema.Types.ObjectId, ref: 'User',
     },
@@ -25,5 +25,5 @@ const conversationSchema = new schema({
         type: Date, default: Date.now
     }
     })
-const conversation = module.exports = mongoose.model('Conversation', conversationSchema)
+module.exports = mongoose.model('Conversation', conversationSchema)
 

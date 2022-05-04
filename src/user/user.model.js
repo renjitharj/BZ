@@ -10,7 +10,8 @@ const UserSchema = new Schema
         password: { type: String, required: true },
         phone: { type: String, required: true, trim: true, unique: true },
         email: { type: String, required: true, unique: true },
-        role: { type: String, enum: ["ADMIN", "USER"], default: "USER"}
+        role: { type: String, enum: ["ADMIN", "USER"], default: "USER"},
+      //  accessToken: { type: String, default: null }
 
 
 

@@ -15,7 +15,7 @@ const jwt = require("../helpers/tokengeneration")
   // data.save();
   var userObject = await bookModel.create(req.body)
   res.send(userObject)
-   res.send("Book Uploaded");
+  // res.send("Book Uploaded");
        
         
     }

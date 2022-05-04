@@ -4,7 +4,7 @@ require("dotenv").config();
 
 async function validateToken(req, res, next) {
   const authorizationHeader = req.headers.authorization;
-  //req.body = sanitize(req.body);
+ // req.body = sanitize(req.body);
   let result;
   if (!authorizationHeader)
     return res.status(401).json({
@@ -16,6 +16,8 @@ async function validateToken(req, res, next) {
     expiresIn: "1h",
   };
   try {
+    
+     
     result = jwt.verify(token, process.env.JWT_SECRET, options);
     req.decoded = result;
     next();

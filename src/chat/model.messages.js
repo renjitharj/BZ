@@ -15,4 +15,4 @@ dateTime:{
 type: Date, default: Date.now
 }
 })
-const message= module.exports =mongoose.model('Message',messageSchema);
+module.exports =mongoose.model('Message',messageSchema);

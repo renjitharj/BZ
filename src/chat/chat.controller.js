@@ -1,3 +1,4 @@
+
 var message=require('../chat/model.messages');
 // Get message By ID
 exports. getMessageByUserId = (id ,callback) =>        {
@@ -13,6 +14,9 @@ exports.getMessageByCoversationId =(id, callback) =>{
 
 // Send message
 exports.sendMessage = async (messageForm, callback) => { 
- messageObj= await message.create(messageForm, callback) ;
+  req.body.userid=req.decoded.id
+
+  var messageObj= await message.create(req.body) ;
+  res.send(messageObj)
 }
 }
